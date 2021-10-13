@@ -1,8 +1,9 @@
 <?php
-ex1();
-ex2(10);
-ex3(1000, 1000);
-ex4($_POST['factorial']);
+//ex1();
+//ex2(10);
+//ex3(1000, 1000);
+//ex4($_POST['factorial']);
+ex5();
 function ex1(){
     $recordedTemps = [78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 75, 76, 73, 68, 62, 73, 72, 65, 74, 62, 62, 65, 64, 68, 73, 75, 79, 73];
     sort($recordedTemps);
@@ -54,3 +55,14 @@ function ex4($n){
     echo $n . " factorial is " . $result;
 }
 
+function ex5(){
+    $response = file_get_contents('http://www.classifiedsteam.co.uk/for-sale/5-gauge-locomotives-and-parts');
+    $startPoint = strpos($response, '<ul class="listing-card-list listing-grid" id="listing-card-list">');
+    $endPoint = strpos($response, "</ul>");
+    $length = $endPoint - $startPoint;
+    $response = substr($response, $startPoint, $length);
+    $itemList = explode('<li class="listing-card">', $response);
+    foreach($itemList as $item){
+        echo "<li>" . $item . "</li>";
+    }
+}
