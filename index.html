@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <p><strong>Please enter your name and birthday:</strong></p>
+  <form name="form1" method="post" action="workshop2.php">
+    <div>
+      <label>Your first name:</label>
+      <input type="text" name="firstName">
+      <label>Your last name</label>
+      <input type="text" name="lastName">
+      <div>
+        <label for="cs">CS</label>
+        <input type="radio" id="cs" name="CS">
+        <label for="cs">SE</label>
+        <input type="radio" id="se" name="CS">
+        <label for="cs">MIT</label>
+        <input type="radio" id="mit" name="CS">
+      </div>
+      <input type="password" placeholder="Enter Password" name="password">
+      <label>Your Birthday:</label>
+      <input type="date" name="birthday">
+      <input type="submit" name="Submit" value="Submit">
+      <input type="reset" name="Submit2" value="Reset">
+    </div>
+  </form>
+</div>
+</body>
+
+</html>
+
+<?php
+echo "hello";
+?>
