@@ -1,0 +1,13 @@
+<?php require('template/header.phtml') ?>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <div>
+            <label>Calculate</label>
+            <input type="text" name="input" value="<?php if(isset($_POST['input'])){echo $_POST['input'];} ?>">
+            <button type="submit" class="btn btn-dark" name="submit">Equals</button>
+        </div>
+    </form>
+<?php if (isset($view->result)) : ?>
+    <p><?php echo $view->result; ?></p>
+<?php endif; ?>
+
+<?php require('template/footer.phtml') ?>
