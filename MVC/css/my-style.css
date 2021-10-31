@@ -16,6 +16,8 @@
     color: #fff;
     text-decoration: none;
     display: block;
+    height: 50px;
+    text-align: center;
 }
 #menu a:hover {
     background-color: #f00;

@@ -1,0 +1,15 @@
+<?php
+require('template/header.phtml');
+if($view->loggedIn == false) {
+    echo "<form action = \"../signup.php\" method = \"post\" >
+    <div>
+        <label> Please enter the following details </label>
+        <input type = \"text\" class=\"form-control\" name = \"username\" placeholder = \"Username\">
+        <input type = \"password\" class=\"form-control\" name = \"password\" placeholder = \"Password\">
+        <button type = \"submit\" class=\"btn btn-dark\" name = \"submit\">Submit</button>
+    </div>
+</form>";
+}else{
+    echo "Welcome Admin";
+}
+require('template/footer.phtml'); ?>
