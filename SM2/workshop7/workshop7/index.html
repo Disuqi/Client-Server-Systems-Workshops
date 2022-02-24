@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <title>workshop 7</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <video id="myVideo" width="640" height="480" >
+        <source src="SampleVideo.mp4" type="video/mp4"/>
+        <p>Video is not supported in your browser</p>
+    </video>
+    <div id = "UI">
+            <div id="tbContainer">
+                <div id="trackBar"></div>
+            </div>
+            <div id="controls">
+            <div>
+                <button id="playOrPause">Play</button>
+            </div>
+            <div>
+                <button onclick="changeVolume('+');">+ vol</button>
+                <button onclick="changeVolume('-');">- vol</button>
+                <div id="volbar"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let v  = document.getElementById("myVideo");
+        let volbar = document.getElementById('volbar');
+        let trackBar = document.getElementById('trackBar');
+        let pButton =  document.getElementById('playOrPause');
+        pButton.addEventListener('click', playVideo, false);
+
+        let volNum = parseInt(v.volume * 100);
+
+        window.setInterval(playBack, 1);
+
+        function playVideo(){
+
+        }
+
+        function changeVolume(volume){
+            switch(volume){
+                case '+':
+                    v.volume += 0.05;
+                    break;
+                case '-':
+                    v.volume -= 0.05;
+                    break;
+            }
+            volNum = parseInt(v.volume * 100);
+            volbar.style.width = volNum + "px";
+        }
+
+        function playBack(){
+            trackBar.style.width = parseInt(v.currentTime / v.duration * 640)  + "px";
+        }
+    </script>
+</body>
+</html>

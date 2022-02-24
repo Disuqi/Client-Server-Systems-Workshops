@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#volbar{
+    width: 100px;
+    height: 20px;
+    background: blue;
+}
+
+#trackBar{
+    width: 0px;
+    height: 10px;
+    transform: translateY(2px);
+    background: white;
+}
+#UI{
+    width: 640px;
+    background: black;
+}
+#tbContainer{
+    width: 640px;
+}
+#controls{
+    display: flex;
+    margin: 5px;
+}
